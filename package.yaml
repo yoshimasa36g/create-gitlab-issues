@@ -17,13 +17,17 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description: Please see the README on GitHub at <https://github.com/githubuser/create-gitlab-issues#readme>
+description: Please see the README on GitHub at <https://github.com/yoshimasa36g/create-gitlab-issues#readme>
 
 dependencies:
   - base >= 4.7 && < 5
 
 library:
   source-dirs: src
+  dependencies:
+    - bytestring
+    - cassava
+    - vector
 
 executables:
   create-gitlab-issues-exe:
@@ -35,6 +39,7 @@ executables:
       - -with-rtsopts=-N
     dependencies:
       - create-gitlab-issues
+      - vector
 
 tests:
   create-gitlab-issues-test:

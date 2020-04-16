@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import qualified Issue
+import qualified Data.Vector                   as V
 
 main :: IO ()
-main = someFunc
+main = do
+  issues <- Issue.readIssues
+  V.forM_ issues $ \x -> putStrLn $ Issue.title x
