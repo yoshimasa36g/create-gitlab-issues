@@ -5,5 +5,5 @@ import qualified Data.Vector                   as V
 
 main :: IO ()
 main = do
-  issues <- Issue.readIssues
+  issues <- Issue.loadIssues
   V.forM_ issues $ \x -> putStrLn $ Issue.title x

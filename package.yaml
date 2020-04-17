@@ -27,6 +27,7 @@ library:
   dependencies:
     - bytestring
     - cassava
+    - exceptions
     - vector
 
 executables:
@@ -50,4 +51,10 @@ tests:
       - -rtsopts
       - -with-rtsopts=-N
     dependencies:
+      - bytestring
       - create-gitlab-issues
+      - directory
+      - hspec
+      - hspec-discover
+      - utf8-string
+      - vector
