@@ -1,4 +1,4 @@
-# :construction: WIP: create-gitlab-issues
+# create-gitlab-issues
 
 Gitlab の issue を複数まとめて作るツールです。
 
