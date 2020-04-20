@@ -10,6 +10,12 @@ Gitlab の API バージョン v4 でのみ動作を確認しています。
 
 Haskell のビルドツールである [Stack][stack] をインストールする必要があります。
 
+その後、以下のコマンドでビルドしてください。
+
+```shell
+$ stack build
+```
+
 ## 使い方
 
 issue に登録する CSV ファイルを用意して以下のコマンドを実行します。
@@ -22,7 +28,7 @@ $ ACCESS_TOKEN=xxxx stack exec create-gitlab-issues-exe
 
 ### CSV ファイルの書式
 
-CSV ファイルは以下の書式で、issues.csv という名前でルートディレクトリに置いてください。
+CSV ファイルは以下の書式で、issues.csv という名前でプロジェクトのルートディレクトリに置いてください。
 
 実際は Excel などで作ると楽だと思います。
 
