@@ -15,12 +15,18 @@ import           System.Environment             ( lookupEnv )
 
 -- | issueのデータ
 data Issue = Issue
-  { title :: !String
+  { url :: !String
+  , project :: !String
+  , title :: !String
   , body :: !String
   } deriving (Eq, Show)
 
 instance FromNamedRecord Issue where
-  parseNamedRecord r = Issue <$> r .: "title" <*> r .: "body"
+  parseNamedRecord r = Issue
+    <$> r .: "url"
+    <*> r .: "project"
+    <*> r .: "title"
+    <*> r .: "body"
 
 -- | CSVファイルからissueの情報を読み込む
 loadIssues :: IO (V.Vector Issue)

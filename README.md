@@ -4,6 +4,8 @@ Gitlab の issue を複数まとめて作るツールです。
 
 CSV ファイルを読み込んで API を使って issue を登録します。
 
+Gitlab の API バージョン v4 でのみ動作を確認しています。
+
 ## 事前準備
 
 Haskell のビルドツールである [Stack][stack] をインストールする必要があります。

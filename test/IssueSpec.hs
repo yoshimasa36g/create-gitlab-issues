@@ -16,11 +16,15 @@ import qualified Issue
 
 createTestFile = do
   file <- Issue.csvFile
-  BL.writeFile file "title,body\n"
+  BL.writeFile file "url,project,title,body\n"
   M.forM_ [1 .. 3] $ \x -> BL.appendFile file (testData x)
  where
   testData x = BL.pack $ BU.encode $ record x
-  record x = "title" ++ (show x) ++ ",body" ++ (show x) ++ "\n"
+  record x = ("url" ++ show x)
+    ++ (",project" ++ show x)
+    ++ (",title" ++ show x)
+    ++ (",body" ++ show x)
+    ++ "\n"
 
 deleteTestFile = do
   file <- Issue.csvFile
@@ -41,6 +45,8 @@ spec = do
           issues `shouldBe` expected
  where
   expected = V.generate 3 $ \x -> issue x
-  issue x = Issue.Issue { Issue.title = "title" ++ (show $ x + 1)
+  issue x = Issue.Issue { Issue.url = "url" ++ (show $ x + 1)
+                        , Issue.project  = "project" ++ (show $ x + 1)
+                        , Issue.title  = "title" ++ (show $ x + 1)
                         , Issue.body  = "body" ++ (show $ x + 1)
                         }
