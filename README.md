@@ -15,7 +15,7 @@ Haskell のビルドツールである [Stack][stack] をインストールす�
 issue に登録する CSV ファイルを用意して以下のコマンドを実行します。
 
 ```shell
-$ ACCESS_TOKEN=xxxx stack exec create-gitlab-issues
+$ ACCESS_TOKEN=xxxx stack exec create-gitlab-issues-exe
 ```
 
 ※ xxxx には Gitlab のユーザ設定で発行した Private Access Token を設定してください

@@ -28,6 +28,10 @@ library:
     - bytestring
     - cassava
     - exceptions
+    - safe-exceptions
+    - http-conduit
+    - uri-encode
+    - utf8-string
     - vector
 
 executables:
@@ -40,6 +44,9 @@ executables:
       - -with-rtsopts=-N
     dependencies:
       - create-gitlab-issues
+      - bytestring
+      - exceptions
+      - utf8-string
       - vector
 
 tests:
